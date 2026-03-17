@@ -10,25 +10,11 @@
     <meta name="description"
         content="Empresa especializada em criação de sites, desenvolvimento web, marketing digital e soluções digitais em Fazenda Rio Grande e Curitiba. Sites profissionais, rápidos e otimizados para Google.">
 
-    <meta name="keywords" content="
-criação de sites fazenda rio grande,
-criação de sites curitiba,
-desenvolvimento de sites fazenda rio grande,
-desenvolvimento web curitiba,
-empresa de marketing digital fazenda rio grande,
-marketing digital curitiba,
-agência digital fazenda rio grande,
-agência de marketing curitiba,
-sites profissionais fazenda rio grande,
-criar site para empresa curitiba,
-desenvolvimento web paraná
-">
+    <meta name="keywords" content="criação de sites fazenda rio grande, criação de sites curitiba, desenvolvimento de sites fazenda rio grande, desenvolvimento web curitiba, empresa de marketing digital fazenda rio grande, marketing digital curitiba, agência digital fazenda rio grande, agência de marketing curitiba, sites profissionais fazenda rio grande, criar site para empresa curitiba, desenvolvimento web paraná">
 
     <meta name="author" content="CandyWorks">
-
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-
     <meta name="geo.region" content="BR-PR">
     <meta name="geo.placename" content="Fazenda Rio Grande, Curitiba">
 
@@ -45,11 +31,7 @@ desenvolvimento web paraná
 
     <link rel="canonical" href="https://candyworks.com.br">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body class="bg-[#050310] text-white overflow-x-hidden">
@@ -64,78 +46,92 @@ desenvolvimento web paraná
         #mainSection {
             background: radial-gradient(82.27% 260% at 9.97% 94.35%, #25000D 3.35%, #050310 76.26%);
         }
+
+        /* Suaviza a abertura do menu mobile */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 
-    <section id="mainSection" class="h-screen w-full relative">
-        <img class="absolute z-0 pointer-events-none" src="./assets/shadow.png"/>
+    <section id="mainSection" class="min-h-screen w-full relative">
+        <img class="absolute z-0 pointer-events-none w-full h-full object-cover" src="./assets/shadow.png" />
         
-        <nav class="w-full items-center gap-23 pr-15 pl-15 h-26 flex animate__animated animate__bounceInDown relative z-10">
+        <nav class="w-full items-center justify-between lg:justify-start lg:gap-23 px-6 lg:px-15 h-26 flex animate__animated animate__bounceInDown relative z-50">
             <img width="170px" src="./assets/logo.png" />
-            <div class="flex mt-1 text-[16px] gap-10 text-white">
+            
+            <div class="hidden lg:flex mt-1 text-[16px] gap-10 text-white">
                 <a href="#mainSection" class="hover:text-[#E80C61] transition-colors">Início</a>
                 <a href="#about" class="hover:text-[#E80C61] transition-colors">Sobre</a>
                 <a href="#portfolio" class="hover:text-[#E80C61] transition-colors">Portifólio</a>
                 <a href="#services" class="hover:text-[#E80C61] transition-colors">Serviços</a>
                 <a href="#contact" class="hover:text-[#E80C61] transition-colors">Contato</a>
             </div>
+
+            <button id="menu-btn" class="lg:hidden text-white focus:outline-none p-2 cursor-pointer">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </nav>
-        <div class="pr-15 mt-32 overflow-hidden pl-15 mt-10 flex justify-between relative z-10">
-            <div class="animate__animated animate__fadeInUp ">
-                <p class="text-white text-7xl w-[650px]">Soluções de marketing para <span
-                        class="text-[#E80C61]">Pequenos Negócios.</span></p>
-                <p class="text-white mt-2 text-2xl">Desenvolvimento de websites, alcance de clientes e fotografias
-                    profissionais.</p>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-[#050310] z-40 hidden flex-col items-center justify-center gap-8 text-2xl">
+            <a href="#mainSection" class="mobile-link">Início</a>
+            <a href="#about" class="mobile-link">Sobre</a>
+            <a href="#portfolio" class="mobile-link">Portifólio</a>
+            <a href="#services" class="mobile-link">Serviços</a>
+            <a href="#contact" class="mobile-link">Contato</a>
+        </div>
+
+        <div class="px-6 lg:px-15 mt-10 lg:mt-32 overflow-hidden flex flex-col lg:flex-row justify-between relative z-10">
+            <div class="animate__animated animate__fadeInUp text-center lg:text-left">
+                <p class="text-white text-4xl md:text-5xl lg:text-7xl lg:w-[650px] font-bold">
+                    Soluções de marketing para <span class="text-[#E80C61]">Pequenos Negócios.</span>
+                </p>
+                <p class="text-white mt-4 text-lg md:text-xl lg:text-2xl max-w-[600px] mx-auto lg:mx-0">
+                    Desenvolvimento de websites, alcance de clientes e fotografias profissionais.
+                </p>
                 <a href="#services"
-                    class="inline-block bg-[#E80C61] cursor-pointer pr-7 pl-7 p-2 rounded text-white text-[20px] mt-5 hover:scale-95 hover:bg-[#E80C61]/50 transition-all ">Nossos
-                    serviços</a>
+                    class="inline-block bg-[#E80C61] cursor-pointer px-7 py-2 rounded text-white text-[20px] mt-8 hover:scale-95 hover:bg-[#E80C61]/50 transition-all ">
+                    Nossos serviços
+                </a>
             </div>
-            <div class=" h-max animate__animated animate__fadeInRight ">
+            <div class="hidden lg:block h-max animate__animated animate__fadeInRight">
                 <img class="self-stretch" src="./assets/marketing.png" />
             </div>
         </div>
     </section>
 
-    <section id="about" class="w-full min-h-[50vh] flex flex-col justify-center items-center py-20 px-15">
+    <section id="about" class="w-full min-h-[50vh] flex flex-col justify-center items-center py-20 px-6 lg:px-15">
         <h2 class="text-4xl font-bold text-[#E80C61] mb-6">Sobre Nós</h2>
         <p class="text-center max-w-3xl text-xl text-gray-300">
             A CandyWorks é especializada em impulsionar pequenos negócios através de soluções digitais sob medida. Unimos design, tecnologia e estratégias focadas em resultados para destacar a sua marca no mercado.
         </p>
     </section>
 
-<section id="portfolio" class="w-full min-h-[50vh] flex flex-col justify-center items-center py-20 px-15 bg-[#25000D]/20">
-    <h2 class="text-4xl font-bold text-[#E80C61] mb-6">Nosso Portifólio</h2>
-    <p class="text-center mb-10 text-xl text-gray-300">Confira alguns dos projetos que já transformamos.</p>
+    <section id="portfolio" class="w-full min-h-[50vh] flex flex-col justify-center items-center py-20 px-6 lg:px-15 bg-[#25000D]/20">
+        <h2 class="text-4xl font-bold text-[#E80C61] mb-6">Nosso Portifólio</h2>
+        <p class="text-center mb-10 text-xl text-gray-300">Confira alguns dos projetos que já transformamos.</p>
 
-    <div class="w-full max-w-5xl gap-6 flex lg:flex-row flex-col mt-15 lg:mt-0">
-        
-        <div class="flex flex-col items-center">
-            <img class="rounded w-[520px]" src="./assets/1.png"/>
-            <p class="mt-2 text-gray-300 text-sm text-center">
-                Website para empresa de ramo industrial.
-            </p>
+        <div class="w-full max-w-5xl lg:max-w-7xl gap-6 flex lg:flex-row flex-col mt-15 lg:mt-0">
+            <div class="flex flex-col items-center">
+                <img class="rounded w-full" src="./assets/1.png"/>
+                <p class="mt-2 text-gray-300 text-sm text-center">Website para empresa de ramo industrial.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img class="rounded w-full " src="./assets/2.png"/>
+                <p class="mt-2 text-gray-300 text-sm text-center">Plataforma personalizada para gestão escolar e cultura.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img class="rounded w-full" src="./assets/3.png"/>
+                <p class="mt-2 text-gray-300 text-sm text-center">Sistema interativo vinculado a plataforma de jogos online.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="flex flex-col items-center">
-            <img class="rounded w-[520px]" src="./assets/2.png"/>
-            <p class="mt-2 text-gray-300 text-sm text-center">
-                Plataforma personalizada para gestão escolar e cultura.
-            </p>
-        </div>
-
-        <div class="flex flex-col items-center">
-            <img class="rounded w-[520px]" src="./assets/3.png"/>
-            <p class="mt-2 text-gray-300 text-sm text-center">
-                Sistema interativo vinculado a plataforma de jogos online.
-            </p>
-        </div>
-
-    </div>
-</section>
-    <section id="services" class="w-full min-h-screen flex flex-col justify-center items-center py-20 px-15">
+    <section id="services" class="w-full min-h-screen flex flex-col justify-center items-center py-20 px-6 lg:px-15">
         <h2 class="text-4xl font-bold text-[#E80C61] mb-16">Nossos Pacotes</h2>
         
         <div class="flex flex-col md:flex-row justify-center gap-8 w-full max-w-6xl">
-            
             <div class="flex-1 bg-[#050310] border border-[#25000D] hover:border-[#E80C61] rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 shadow-lg">
                 <h3 class="text-2xl font-bold mb-2">Simples</h3>
                 <div class="text-4xl font-bold text-[#E80C61] mb-8">R$ 200</div>
@@ -144,16 +140,11 @@ desenvolvimento web paraná
                     <li><span class="text-[#E80C61] mr-2">✓</span> Planilha financeira</li>
                     <li><span class="text-[#E80C61] mr-2">✓</span> Empresa no Google</li>
                 </ul>
-                <button class="btn-whatsapp w-full bg-[#25000D] hover:bg-[#E80C61] text-white font-bold py-3 rounded transition-colors cursor-pointer" data-pacote="Simples" data-preco="200">
-                    Quero este
-                </button>
+                <button class="btn-whatsapp w-full bg-[#25000D] hover:bg-[#E80C61] text-white font-bold py-3 rounded transition-colors cursor-pointer" data-pacote="Simples" data-preco="200">Quero este</button>
             </div>
 
-            <div class="flex-1 relative bg-gradient-to-b from-[#25000D] to-[#050310] border border-[#E80C61] rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 shadow-2xl shadow-[#E80C61]/20 scale-105">
-                <div class="absolute -top-4 bg-[#E80C61] text-white text-sm font-bold uppercase tracking-wider py-1.5 px-6 rounded-full shadow-lg">
-                    Mais Vendido
-                </div>
-                
+            <div class="flex-1 relative bg-gradient-to-b from-[#25000D] to-[#050310] border border-[#E80C61] rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 shadow-2xl shadow-[#E80C61]/20 lg:scale-105">
+                <div class="absolute -top-4 bg-[#E80C61] text-white text-sm font-bold uppercase tracking-wider py-1.5 px-6 rounded-full shadow-lg">Mais Vendido</div>
                 <h3 class="text-2xl font-bold mb-2 mt-2">Completo</h3>
                 <div class="text-4xl font-bold text-[#E80C61] mb-8">R$ 320</div>
                 <ul class="text-gray-300 space-y-4 mb-8 text-left w-full flex-grow text-lg">
@@ -162,9 +153,7 @@ desenvolvimento web paraná
                     <li><span class="text-[#E80C61] mr-2">✓</span> Planilha financeira</li>
                     <li><span class="text-[#E80C61] mr-2">✓</span> Empresa no Google</li>
                 </ul>
-                <button class="btn-whatsapp w-full bg-[#E80C61] hover:bg-[#6C0027] text-white font-bold py-3 rounded shadow-lg shadow-[#E80C61]/30 transition-colors cursor-pointer" data-pacote="Completo" data-preco="320">
-                    Quero este
-                </button>
+                <button class="btn-whatsapp w-full bg-[#E80C61] hover:bg-[#6C0027] text-white font-bold py-3 rounded shadow-lg shadow-[#E80C61]/30 transition-colors cursor-pointer" data-pacote="Completo" data-preco="320">Quero este</button>
             </div>
 
             <div class="flex-1 bg-[#050310] border border-[#25000D] hover:border-[#E80C61] rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 shadow-lg">
@@ -176,15 +165,12 @@ desenvolvimento web paraná
                     <li><span class="text-[#E80C61] mr-2">✓</span> Planilha financeira</li>
                     <li><span class="text-[#E80C61] mr-2">✓</span> Empresa no Google</li>
                 </ul>
-                <button class="btn-whatsapp w-full bg-[#25000D] hover:bg-[#E80C61] text-white font-bold py-3 rounded transition-colors cursor-pointer" data-pacote="Premium" data-preco="550">
-                    Quero este
-                </button>
+                <button class="btn-whatsapp w-full bg-[#25000D] hover:bg-[#E80C61] text-white font-bold py-3 rounded transition-colors cursor-pointer" data-pacote="Premium" data-preco="550">Quero este</button>
             </div>
-
         </div>
     </section>
 
-    <section id="contact" class="w-full min-h-[40vh] flex flex-col justify-center items-center py-20 px-15 bg-[#25000D]/20">
+    <section id="contact" class="w-full min-h-[40vh] flex flex-col justify-center items-center py-20 px-6 lg:px-15 bg-[#25000D]/20">
         <h2 class="text-4xl font-bold text-[#E80C61] mb-6">Contato</h2>
         <p class="text-center mb-8 text-xl text-gray-300">Pronto para alavancar seu negócio? Fale conosco!</p>
         <a href="mailto:contato@candyworks.com.br" class="border-2 border-[#E80C61] text-[#E80C61] hover:bg-[#E80C61] hover:text-white font-bold py-3 px-10 rounded transition-colors text-lg">
@@ -197,23 +183,38 @@ desenvolvimento web paraná
     </footer>
 
     <script>
-        // ATENÇÃO: Coloque aqui o número do WhatsApp da CandyWorks (Ex: 5541999999999)
-        const numeroWhatsApp = '554192169454';
+        // Lógica do Menu Burguer
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            document.body.classList.toggle('overflow-hidden');
+
+            if (isHidden) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // WhatsApp
+        const numeroWhatsApp = '554192169454';
         document.querySelectorAll('.btn-whatsapp').forEach(botao => {
             botao.addEventListener('click', function() {
                 const pacote = this.getAttribute('data-pacote');
                 const preco = this.getAttribute('data-preco');
-                
-                // Monta a mensagem automática
                 const mensagem = `Olá! Vim pelo site da CandyWorks e gostaria de saber mais sobre o pacote ${pacote} no valor de R$ ${preco}.`;
-                
-                // Redireciona para o link do WhatsApp
                 const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
                 window.open(link, '_blank');
             });
         });
     </script>
-
 </body>
 </html>
